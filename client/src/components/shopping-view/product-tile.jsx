@@ -9,8 +9,8 @@ function ShoppingProductTile({
   handleAddtoCart,
 }) {
   return (
-    <Card className="w-full max-w-sm mx-auto">
-      <div onClick={() => handleGetProductDetails(product?._id)}>
+    <Card className="w-full max-w-sm mx-auto flex flex-col justify-between h-full">
+      <div onClick={() => handleGetProductDetails(product?._id)} className="flex-1 flex flex-col">
         <div className="relative">
           <img
             src={product?.image}
@@ -31,8 +31,9 @@ function ShoppingProductTile({
             </Badge>
           ) : null}
         </div>
-        <CardContent className="p-4">
-          <h2 className="text-xl font-bold mb-2">{product?.title}</h2>
+
+        <CardContent className="p-4 flex-1">
+          <h2 className="text-m mb-2">{product?.title}</h2>
           <div className="flex justify-between items-center mb-2">
             <span className="text-[16px] text-muted-foreground">
               {categoryOptionsMap[product?.category]}
@@ -43,21 +44,21 @@ function ShoppingProductTile({
           </div>
           <div className="flex justify-between items-center mb-2">
             <span
-              className={`${
-                product?.salePrice > 0 ? "line-through" : ""
-              } text-lg font-semibold text-primary`}
+              className={`${product?.salePrice > 0 ? "line-through" : ""
+                } text-lg font-semibold text-primary`}
             >
               ₹{product?.price}
             </span>
-            {product?.salePrice > 0 ? (
+            {product?.salePrice > 0 && (
               <span className="text-lg font-semibold text-primary">
                 ₹{product?.salePrice}
               </span>
-            ) : null}
+            )}
           </div>
         </CardContent>
       </div>
-      <CardFooter>
+
+      <CardFooter className="flex justify-end mt-auto p-4">
         {product?.totalStock === 0 ? (
           <Button className="w-full opacity-60 cursor-not-allowed">
             Out Of Stock
