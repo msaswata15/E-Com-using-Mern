@@ -36,7 +36,7 @@ A full-stack e-commerce application built with MongoDB, Express, React, and Node
 - **Order Management:** Place orders, view order history, and admin order management.
 - **Product Reviews:** Users can add and view reviews for products.
 - **Address Management:** Save and manage shipping addresses.
-- **Payment Integration:** Supports PayPal and Razorpay for secure payments.
+- **Payment Integration:** Supports Razorpay for secure payments.
 - **Admin Dashboard:** Manage products, orders, and users.
 - **Responsive UI:** Built with React and Tailwind CSS for a modern, mobile-friendly experience.
 - **API Security:** Uses JWT, cookies, and CORS for secure API access.
